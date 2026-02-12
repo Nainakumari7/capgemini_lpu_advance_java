@@ -1,0 +1,23 @@
+package com.practice;
+
+import javax.management.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+public class Demo4 {
+
+	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("postgres");
+		EntityManager em = emf.createEntityManager();
+
+//		EntityTransaction
+		EntityTransaction et = em.getTransaction();
+		
+		String jpql = "Select s from Student s";
+		Query query = em.createQuery(jpql);
+
+	}
+
+}
