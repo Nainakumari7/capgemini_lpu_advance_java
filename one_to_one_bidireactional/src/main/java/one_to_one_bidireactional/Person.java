@@ -3,10 +3,12 @@ package one_to_one_bidireactional;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Person {
+	
 	@Id
 	private int id;
 	private String name;
@@ -14,6 +16,7 @@ public class Person {
 	private String email;
 	
 	@OneToOne(cascade = CascadeType.ALL )
+	@JoinColumn
 	private Passport passport;
 	
 	public Passport getPassport() {

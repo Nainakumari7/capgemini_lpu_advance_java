@@ -12,7 +12,6 @@ public class Subject {
 	private String name;
 	private int no_of_days;
 	
-	
 	public int getId() {
 		return id;
 	}

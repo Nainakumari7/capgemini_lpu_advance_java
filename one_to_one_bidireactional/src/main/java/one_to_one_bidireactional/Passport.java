@@ -1,6 +1,7 @@
 package one_to_one_bidireactional;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -12,7 +13,9 @@ public class Passport {
 	private String name;
 	private int dob;
 	
+	
 //	@OneToOne(mappedBy = "passport")
+	@OneToOne(fetch = FetchType.LAZY)
 	private Person person;
 	
 	public Person getPerson() {
@@ -40,9 +43,11 @@ public class Passport {
 		this.dob = dob;
 	}
 	
+	
 	@Override
 	public String toString() {
 		return "Passport [id=" + id + ", name=" + name + ", dob=" + dob + "]";
 	}
 
 }
+ 
